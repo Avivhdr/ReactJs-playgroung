@@ -1,9 +1,7 @@
-
-.one-box{
+.one-box {
     text-align: center;
     line-height: 250px;
     height: 250px;
     width: 350px;
     border: 2px black solid;
-
 }

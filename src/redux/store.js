@@ -5,18 +5,18 @@ import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
 import { locationsReducer } from './locationReducer';
-import { preformanceReducer } from '../components/preformance/preformance.Reducer';
+import { performanceReducer } from '../components/performance/performance.Reducer';
 
 export const rootReducer = combineReducers({
-    locations: locationsReducer,
-    form: formReducer,
-    preformance: preformanceReducer 
-  });
+  locations: locationsReducer,
+  form: formReducer,
+  performance: performanceReducer
+});
 
 const store = createStore(rootReducer)
 
-store.subscribe(()=>{
-    console.log(store.getState())
+store.subscribe(() => {
+  console.log(store.getState())
 })
 
 export default store;

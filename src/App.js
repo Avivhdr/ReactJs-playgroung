@@ -1,11 +1,12 @@
 /* eslint-disable */
 
-import React, {Component} from 'react';
-import {  BrowserRouter as Router,  Route,  Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import _ from 'lodash';
 import Map from './components/map';
-import Searchbox from './components/SearchBox' 
-import StandAloneSearchbox from './components/StandAloneSearchBox' 
+import SearchBox from './components/SearchBox'
+import StandAloneSearchBox from './components/StandAloneSearchBox'
+// import Performance from './components/performance'
 import Show from './components/Show';
 import Home from './components/Home';
 import MyForm from './redux/MyForm';
@@ -18,40 +19,40 @@ class ContactPage extends React.Component {
   render() {
     return (
       <MyForm onSubmit={this.submit} />
-    ) 
+    )
   }
 }
 
 const ShowLocations = () => {
   return (
-    <Show 
-    containerElement={ <div style={{ height: `600px` }} /> } 
-    mapElement={ <div style={{ height: `100%` }} /> }
+    <Show
+      containerElement={<div style={{ height: `600px` }} />}
+      mapElement={<div style={{ height: `100%` }} />}
     />
   )
 }
 
 const ShowFeatures = () => {
   return (
-      <Map 
-      containerElement={ <div style={{ height: `600px` }} /> } 
-      mapElement={ <div style={{ height: `100%` }} /> }
-      // onToggleOpen={this.onToggleOpen.bind(this)}
-      // isOpen={this.state.isOpen}
-      /> 
+    <Map
+      containerElement={<div style={{ height: `600px` }} />}
+      mapElement={<div style={{ height: `100%` }} />}
+    // onToggleOpen={this.onToggleOpen.bind(this)}
+    // isOpen={this.state.isOpen}
+    />
   )
 }
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super()
-    this.state={
+    this.state = {
       isOpen: false
     }
   }
 
-  onToggleOpen () {
-    this.setState({isOpen: !this.state.isOpen})
+  onToggleOpen() {
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
   render() {
@@ -61,20 +62,20 @@ class App extends Component {
           <ul style={styles.ul}>
             <li style={styles.li}><Link to="/">Home</Link></li>
             <li style={styles.li}><Link to="/search">Search</Link></li>
-            <li style={styles.li}><Link to="/show">Show</Link></li> 
-            <li style={styles.li}><Link to="/features">Features</Link></li> 
-            <li style={styles.li}><Link to="/form">form</Link></li> 
-            <li style={styles.li}><Link to="/preformance">preformance</Link></li> 
+            <li style={styles.li}><Link to="/show">Show</Link></li>
+            <li style={styles.li}><Link to="/features">Features</Link></li>
+            <li style={styles.li}><Link to="/form">form</Link></li>
+            {/* <li style={styles.li}><Link to="/performance">performance</Link></li> */}
           </ul>
 
-          <hr/>
+          <hr />
 
-          <Route exact path="/" component={Home}/>
-          <Route path="/search" component={StandAloneSearchbox}/>
-          <Route path="/show" component={ShowLocations}/>
-          <Route path="/features" component={ShowFeatures}/>
-          <Route path="/form" component={ContactPage}/>
-          <Route path="/preformance" component={Preformance}/>
+          <Route exact path="/" component={Home} />
+          <Route path="/search" component={StandAloneSearchbox} />
+          <Route path="/show" component={ShowLocations} />
+          <Route path="/features" component={ShowFeatures} />
+          <Route path="/form" component={ContactPage} />
+          {/* <Route path="/performance" component={Performance} /> */}
 
         </div>
       </Router>
@@ -114,4 +115,4 @@ const styles = {
           onToggleOpen={this.onToggleOpen.bind(this)}
           isOpen={this.state.isOpen}
           /> */
-        
+

@@ -1,5 +1,5 @@
 /* eslint-disable */
 
 export function addLocation(location) {
-  return {type: ADD_LOCATION, location}
+  return { type: ADD_LOCATION, location }
 }

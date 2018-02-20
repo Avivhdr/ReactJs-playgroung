@@ -2,46 +2,46 @@
 
 import React, { Component } from 'react';
 import store from '../redux/store';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle, InfoWindow  } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle, InfoWindow } from "react-google-maps";
 import { mapOptions } from './map'
 
 
 class Show extends Component {
-    
-    constructor(){
-        super()
-        this.state={
-          map:null
-        }
-      }
-      
-      mapLoaded(map) {
-        if (this.state.map != null) 
-          return
-        this.setState({map: map})
-      }
 
-      render() {
-        let locations = store.getState().locations;
-        const locationItems = locations.map((item,index) =>
-            <Marker key={index}
-                position={new google.maps.LatLng(item.geometry.location.lat(), item.geometry.location.lng())}
-                onClick={this.props.onToggleOpen}
-            >
-                <InfoWindow onCloseClick={this.props.onToggleOpen}>
-                    <div>
-                    {item.formatted_address}
-                    </div>
-                </InfoWindow>                     
-        </Marker>
-      );
-      
-        return (
-            <GoogleMap
-                ref={this.mapLoaded.bind(this)}
-                options={mapOptions}
-                >
-                {/* <InfoBox
+  constructor() {
+    super()
+    this.state = {
+      map: null
+    }
+  }
+
+  mapLoaded(map) {
+    if (this.state.map != null)
+      return
+    this.setState({ map: map })
+  }
+
+  render() {
+    let locations = store.getState().locations;
+    const locationItems = locations.map((item, index) =>
+      <Marker key={index}
+        position={new google.maps.LatLng(item.geometry.location.lat(), item.geometry.location.lng())}
+        onClick={this.props.onToggleOpen}
+      >
+        <InfoWindow onCloseClick={this.props.onToggleOpen}>
+          <div>
+            {item.formatted_address}
+          </div>
+        </InfoWindow>
+      </Marker>
+    );
+
+    return (
+      <GoogleMap
+        ref={this.mapLoaded.bind(this)}
+        options={mapOptions}
+      >
+        {/* <InfoBox
                 defaultPosition={new google.maps.LatLng(32.08670149769721, 34.7905135788818)}
                 options={{ closeBoxURL: ``, enableEventPropagation: true }} >
                     <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
@@ -50,10 +50,10 @@ class Show extends Component {
                         </div>
                     </div>
                 </InfoBox> */}
-            {locationItems}
+        {locationItems}
       </GoogleMap>
-        )
-    }
+    )
+  }
 }
 
 export default withGoogleMap(Show)
