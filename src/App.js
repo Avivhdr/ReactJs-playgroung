@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import _ from 'lodash';
 import Map from './components/map';
 // import SearchBox from './components/SearchBox';
-import StandAloneSearchBox from './components/StandAloneSearchBox'
+import StandAloneSearchBox from './components/StandAloneSearchBox';
 // import Performance from './components/performance'
 import Show from './components/Show';
 import Home from './components/Home';
@@ -17,7 +17,7 @@ class ContactPage extends React.Component {
   render() {
     return (
       <MyForm onSubmit={this.submit} />
-    )
+    );
   }
 }
 
@@ -27,8 +27,8 @@ const ShowLocations = () => {
       containerElement={<div style={{ height: '600px' }} />}
       mapElement={<div style={{ height: '100%' }} />}
     />
-  )
-}
+  );
+};
 
 const ShowFeatures = () => {
   return (
@@ -38,19 +38,19 @@ const ShowFeatures = () => {
     // onToggleOpen={this.onToggleOpen.bind(this)}
     // isOpen={this.state.isOpen}
     />
-  )
-}
+  );
+};
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false
-    }
+    };
   }
 
   onToggleOpen() {
-    this.setState({ isOpen: !this.state.isOpen })
+    this.setState({ isOpen: !this.state.isOpen });
   }
 
   render() {
@@ -95,7 +95,7 @@ const styles = {
     float: 'left',
     padding: '8px'
   }
-}
+};
 
 
 
