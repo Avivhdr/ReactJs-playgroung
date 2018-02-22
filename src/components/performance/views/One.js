@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './one.css';
-
 export default class One extends Component {
 
-  constructor(props) { // eslint-disable-line
+  constructor(props) {
     super(props);
     this.state = {
       timesRender: 0,
@@ -16,7 +15,6 @@ export default class One extends Component {
   //     action: PropTypes.func.isRequired,
   // }
 
-
   componentWillMount() {
     console.log('component will mount');
   }
@@ -27,7 +25,7 @@ export default class One extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('component will recieve props: ', nextProps);
+    console.log('component will receive props: ', nextProps);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -51,7 +49,7 @@ export default class One extends Component {
   }
 
   componentWillUnmount() {
-    console.log('component will unmount');
+    console.log('component will un-mount');
   }
 
   changeState = () => {
@@ -63,7 +61,7 @@ export default class One extends Component {
     // this.setState(prevState, () => {timesRender: prevState.timesRender + 1}) //causes infinite loop
     return (
       <div className={'one-box'} onClick={this.props.action}>
-        {this.state.stateOfOne}
+      s  {this.state.stateOfOne}
       </div>
     )
   }

@@ -1,6 +1,4 @@
-/* eslint-disable */
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import _ from 'lodash';
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox';
 import store from '../redux/store';
@@ -9,7 +7,7 @@ import { addLocation } from '../redux/actions';
 
 class PlacesWithStandaloneSearchBox extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       places: [],
       searchBox: null
@@ -18,7 +16,7 @@ class PlacesWithStandaloneSearchBox extends Component {
 
   onSearchBoxMounted(ref) {
     if (this.state.searchBox != null)
-      return
+      return;
     this.setState({ searchBox: ref });
   }
 
@@ -52,7 +50,7 @@ class PlacesWithStandaloneSearchBox extends Component {
           {state.places.map(({ photos, place_id, formatted_address, geometry: { location } }) =>
             <li key={place_id}>
               {formatted_address}
-              {" at: "}
+              {' at: '}
               ({location.lat()}, {location.lng()})
                         </li>
           )}
@@ -64,20 +62,20 @@ class PlacesWithStandaloneSearchBox extends Component {
   }
 }
 
-export default PlacesWithStandaloneSearchBox
+export default PlacesWithStandaloneSearchBox;
 
 const style = {
   input: {
-    boxSizing: `border-box`,
-    border: `1px solid transparent`,
-    width: `240px`,
-    height: `32px`,
-    padding: `0 12px`,
-    borderRadius: `3px`,
-    boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-    fontSize: `14px`,
-    outline: `none`,
-    textOverflow: `ellipses`,
+    boxSizing: 'border-box',
+    border: '1px solid transparent',
+    width: '240px',
+    height: '32px',
+    padding: '0 12px',
+    borderRadius: '3px',
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)',
+    fontSize: '14px',
+    outline: 'none',
+    textOverflow: 'ellipses',
   }
 
-}
+};

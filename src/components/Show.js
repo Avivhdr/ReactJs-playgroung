@@ -1,15 +1,13 @@
-/* eslint-disable */
-
 import React, { Component } from 'react';
 import store from '../redux/store';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle, InfoWindow } from "react-google-maps";
-import { mapOptions } from './map'
+import { mapOptions } from './map';
 
 
 class Show extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
       map: null
     }
@@ -18,7 +16,7 @@ class Show extends Component {
   mapLoaded(map) {
     if (this.state.map != null)
       return
-    this.setState({ map: map })
+    this.setState({ map: map });
   }
 
   render() {
@@ -56,4 +54,4 @@ class Show extends Component {
   }
 }
 
-export default withGoogleMap(Show)
+export default withGoogleMap(Show);

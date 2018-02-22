@@ -24,9 +24,12 @@
     "styleguide:build": "styleguidist build"
   },
   "devDependencies": {
-    "eslint": "^4.16.0",
-    "eslint-plugin-react": "^7.6.1",
-    "react-styleguidist": "^6.2.5",
-    "webpack": "^3.11.0"
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "react-styleguidist": "^6.2.5"
   }
 }

@@ -1,31 +1,29 @@
-/* eslint-disable */
-
-import React, { Component } from 'react'
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle, InfoWindow } from "react-google-maps"
-import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox";
-import DrawingManager from "react-google-maps/lib/components/drawing/DrawingManager";
-const FaAnchor = require("react-icons/lib/fa/child");
-const { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");
+import React, { Component } from 'react';
+// import { compose, withProps } from 'recompose';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle, InfoWindow } from 'react-google-maps';
+import { InfoBox } from 'react-google-maps/lib/components/addons/InfoBox';
+import DrawingManager from 'react-google-maps/lib/components/drawing/DrawingManager';
+const FaAnchor = require('react-icons/lib/fa/child');
+// const { SearchBox } = require('react-google-maps/lib/components/places/SearchBox');
 
 let styles = [
   {
-    "featureType": "all",
-    "stylers": [
-      { "color": "#C0C0C0" }
+    'featureType': 'all',
+    'stylers': [
+      { 'color': '#C0C0C0' }
     ]
   }, {
-    "featureType": "road.arterial",
-    "elementType": "geometry",
-    "stylers": [
-      { "color": "#CCFFFF" }
+    'featureType': 'road.arterial',
+    'elementType': 'geometry',
+    'stylers': [
+      { 'color': '#CCFFFF' }
     ]
   }
   , {
-    "featureType": "landscape",
-    "elementType": "labels",
-    "stylers": [
-      { "visibility": "off" }
+    'featureType': 'landscape',
+    'elementType': 'labels',
+    'stylers': [
+      { 'visibility': 'off' }
     ]
   }
 ]
@@ -87,8 +85,8 @@ let circleOptions = {
 }
 
 class Map extends React.PureComponent {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
       map: null
     }
@@ -96,8 +94,8 @@ class Map extends React.PureComponent {
 
   mapLoaded(map) {
     if (this.state.map != null)
-      return
-    this.setState({ map: map })
+      return;
+    this.setState({ map: map });
   }
 
   onDragEnd() {
@@ -113,9 +111,9 @@ class Map extends React.PureComponent {
       >
         <InfoBox
           defaultPosition={new google.maps.LatLng(32.08670149769721, 34.7905135788818)}
-          options={{ closeBoxURL: ``, enableEventPropagation: true }} >
-          <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
-            <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+          options={{ closeBoxURL: '', enableEventPropagation: true }} >
+          <div style={{ backgroundColor: 'yellow', opacity: 0.75, padding: '12px' }}>
+            <div style={{ fontSize: '16px', fontColor: '#08233B' }}>
               כיכר המדינה!
                     </div>
           </div>
@@ -153,7 +151,7 @@ class Map extends React.PureComponent {
                 ],
               },
               circleOptions: {
-                fillColor: `#ffff00`,
+                fillColor: '#ffff00',
                 fillOpacity: 1,
                 strokeWeight: 5,
                 clickable: false,
@@ -168,4 +166,4 @@ class Map extends React.PureComponent {
   }
 }
 
-export default withGoogleMap(Map)
+export default withGoogleMap(Map);

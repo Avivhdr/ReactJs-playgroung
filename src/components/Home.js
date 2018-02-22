@@ -5,7 +5,7 @@ export default class componentName extends Component {
     return (
       <div>
         This is the HOME page
-            </div>
-    )
+    </div>
+    );
   }
 }

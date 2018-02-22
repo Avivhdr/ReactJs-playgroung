@@ -1,31 +1,28 @@
-/* eslint-disable */
-
-
-import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 let ContactForm = props => {
-  const { handleSubmit } = props
+  const { handleSubmit } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" component="input" type="text" />
+        <label htmlFor='firstName'>First Name</label>
+        <Field name='firstName' component='input' type='text' />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" component="input" type="text" />
+        <label htmlFor='lastName'>Last Name</label>
+        <Field name='lastName' component='input' type='text' />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="email" />
+        <label htmlFor='email'>Email</label>
+        <Field name='email' component='input' type='email' />
       </div>
-      <button type="submit">Submit</button>
+      <button type='submit'>Submit</button>
     </form>
   )
 }
 
-// create new, "configured" function
+// create new, 'configured' function
 // let createReduxForm = reduxForm({ form: 'contact' })
 
 // evaluate it for ContactForm component

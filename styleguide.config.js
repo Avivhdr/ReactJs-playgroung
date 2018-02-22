@@ -80,12 +80,12 @@ module.exports = {
       sections: [
         {
           name: 'General Explanation',
-          content: './docs/styleGuidist/generalExplanation.md',
+          content: './src/docs/styleGuidist/generalExplanation.md',
           description: 'I\'m the description from the config file',
         },
         {
           name: 'Terms Of Use',
-          content: './docs/styleGuidist/termsOfUse.md',
+          content: './src/docs/styleGuidist/termsOfUse.md',
           description: 'These are the terms of use',
         }
       ]
@@ -93,37 +93,37 @@ module.exports = {
     {
       name: 'Component',
       // content: 'content.md',
-      // components: './app/common/styleguide/*/*.js'
-      components: () => [
-        // './app/common/styleguide/ButtonWrapper/ButtonWrapper.js',
-        // './app/common/styleguide/DatePickerWrapper/DatePickerWrapper.js'
-      ]
+      components: './src/styleguidist/*.js'
+      // components: () => [
+      //   './app/common/styleguide/ButtonWrapper/ButtonWrapper.js',
+      //   './app/common/styleguide/DatePickerWrapper/DatePickerWrapper.js'
+      // ]
     },
   ],
 
-  webpackConfig: require('./internals/webpack/webpack.dev.babel.js'),
+  // webpackConfig: require('./internals/webpack/webpack.dev.babel.js'),
   
-  // webpackConfig: {
-  //   module: {
-  //     rules: [
-  //       // Babel loader, will use your project’s .babelrc
-  //       {
-  //         test: /\.js?$/,
-  //         exclude: /node_modules/,
-  //         loader: 'babel-loader'
-  //       },
-  //       // Other loaders that are needed for your components
-  //       {
-  //         test: /\.css$/,
-  //         loader: 'style-loader!css-loader?modules'
-  //       },
-  //       {
-  //         test: /\.less$/,
-  //         loader: 'style-loader!css-loader!less-loader?modules'
-  //       }
-  //     ]
-  //   }
-  // }
+  webpackConfig: {
+    module: {
+      rules: [
+        // // Babel loader, will use your project’s .babelrc
+        // {
+        //   test: /\.js?$/,
+        //   exclude: /node_modules/,
+        //   loader: 'babel-loader'
+        // },
+        // // Other loaders that are needed for your components
+        // {
+        //   test: /\.css$/,
+        //   loader: 'style-loader!css-loader?modules'
+        // },
+        // {
+        //   test: /\.less$/,
+        //   loader: 'style-loader!css-loader!less-loader?modules'
+        // }
+      ]
+    }
+  }
 
   // here we can config the name of the example file.
   // e,g: myComponent.examples.md

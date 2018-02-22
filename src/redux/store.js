@@ -1,11 +1,9 @@
-/* eslint-disable */
-
-import React from 'react';
+// import React from 'react';
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
 import { locationsReducer } from './locationReducer';
-import { performanceReducer } from '../components/performance/performance.Reducer';
+import { performanceReducer } from '../components/performance/performance.reducer';
 
 export const rootReducer = combineReducers({
   locations: locationsReducer,
@@ -13,10 +11,10 @@ export const rootReducer = combineReducers({
   performance: performanceReducer
 });
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer);
 
 store.subscribe(() => {
-  console.log(store.getState())
-})
+  console.log(store.getState());
+});
 
 export default store;

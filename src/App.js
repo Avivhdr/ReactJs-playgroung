@@ -1,20 +1,18 @@
-/* eslint-disable */
-
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import _ from 'lodash';
+// import _ from 'lodash';
 import Map from './components/map';
-import SearchBox from './components/SearchBox'
+// import SearchBox from './components/SearchBox';
 import StandAloneSearchBox from './components/StandAloneSearchBox'
 // import Performance from './components/performance'
 import Show from './components/Show';
 import Home from './components/Home';
 import MyForm from './redux/MyForm';
-import store from './redux/store';
+// import store from './redux/store';
 
 class ContactPage extends React.Component {
   submit = (values) => {
-    console.log(values)
+    console.log(values);
   }
   render() {
     return (
@@ -26,8 +24,8 @@ class ContactPage extends React.Component {
 const ShowLocations = () => {
   return (
     <Show
-      containerElement={<div style={{ height: `600px` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
+      containerElement={<div style={{ height: '600px' }} />}
+      mapElement={<div style={{ height: '100%' }} />}
     />
   )
 }
@@ -35,8 +33,8 @@ const ShowLocations = () => {
 const ShowFeatures = () => {
   return (
     <Map
-      containerElement={<div style={{ height: `600px` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
+      containerElement={<div style={{ height: '600px' }} />}
+      mapElement={<div style={{ height: '100%' }} />}
     // onToggleOpen={this.onToggleOpen.bind(this)}
     // isOpen={this.state.isOpen}
     />
@@ -45,7 +43,7 @@ const ShowFeatures = () => {
 
 class App extends Component {
   constructor(props) {
-    super()
+    super(props);
     this.state = {
       isOpen: false
     }
@@ -71,7 +69,7 @@ class App extends Component {
           <hr />
 
           <Route exact path="/" component={Home} />
-          <Route path="/search" component={StandAloneSearchbox} />
+          <Route path="/search" component={StandAloneSearchBox} />
           <Route path="/show" component={ShowLocations} />
           <Route path="/features" component={ShowFeatures} />
           <Route path="/form" component={ContactPage} />
