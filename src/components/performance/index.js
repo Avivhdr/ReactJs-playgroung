@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';// eslint-disable-line
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import * as performanceActions from './performance.actions';
 // import performanceReducer from './performance.Reducer';
 
@@ -9,7 +9,12 @@ import One from './views/One';
 
 class Performance extends Component {
 
-  constructor(props) {// eslint-disable-line
+  static PropTypes = {
+    storeObject: PropTypes.object,
+    actions: PropTypes.isAny
+  }
+
+  constructor(props) { // eslint-disable-line
     super(props);
   }
 
@@ -48,21 +53,19 @@ class Performance extends Component {
     console.log('component will unmount');
   }
 
-
+  componentDidCatch(error, info) {
+    console.log('component Did Catch');
+    console.log(error, info);
+  }
 
   render() {
     return (
       <div>
-        <One props={this.props} />
+        <One props={this.props}/>
       </div>
     );
   }
 }
-
-// Performance.propTypes = {
-//     storeObject: PropTypes.object,
-//     actions: PropTypes.isAny
-// }
 
 function mapStateToProps(state) {
   return {

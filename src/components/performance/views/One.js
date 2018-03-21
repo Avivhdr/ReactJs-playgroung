@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './one.css';
-export default class One extends Component {
+
+class One extends Component {
 
   constructor(props) {
     super(props);
@@ -11,9 +12,9 @@ export default class One extends Component {
     };
   }
 
-  // static propTypes = {
-  //     action: PropTypes.func.isRequired,
-  // }
+  static propTypes = {
+    action: PropTypes.func.isRequired
+  }
 
   componentWillMount() {
     console.log('component will mount');
@@ -53,16 +54,19 @@ export default class One extends Component {
   }
 
   changeState = () => {
-    this.setState({ stateOfOne: 'changed' })
+    this.setState({stateOfOne: 'changed'})
   }
 
   render() {
 
-    // this.setState(prevState, () => {timesRender: prevState.timesRender + 1}) //causes infinite loop
+    // this.setState(prevState, () => {timesRender: prevState.timesRender + 1})
+    // //causes infinite loop
     return (
       <div className={'one-box'} onClick={this.props.action}>
-      s  {this.state.stateOfOne}
+        {this.state.stateOfOne}
       </div>
     )
   }
 }
+
+export default One;
