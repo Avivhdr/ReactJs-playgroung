@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import store from '../redux/store';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle, InfoWindow } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Circle, InfoWindow } from 'react-google-maps';
 import { mapOptions } from './map';
 
 
 class Show extends Component {
 
+  static propTypes = {
+    onToggleOpen: PropTypes.func,
+  }
   constructor(props) {
     super(props);
     this.state = {
       map: null
-    }
+    };
   }
 
   mapLoaded(map) {
     if (this.state.map != null)
-      return
+      return;
     this.setState({ map: map });
   }
 
@@ -50,7 +54,7 @@ class Show extends Component {
                 </InfoBox> */}
         {locationItems}
       </GoogleMap>
-    )
+    );
   }
 }
 

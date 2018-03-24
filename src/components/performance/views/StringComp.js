@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './one.css';
+import './box.css';
 
-class One extends Component {
+class StringComp extends Component {
 
   constructor(props) {
     super(props);
@@ -53,8 +53,13 @@ class One extends Component {
     console.log('component will un-mount');
   }
 
+  componentDidCatch(error, info) {
+    console.log('component Did Catch');
+    console.log(error, info);
+  }
+
   changeState = () => {
-    this.setState({stateOfOne: 'changed'})
+    this.setState({stateOfOne: 'changed'});
   }
 
   render() {
@@ -65,8 +70,8 @@ class One extends Component {
       <div className={'one-box'} onClick={this.props.action}>
         {this.state.stateOfOne}
       </div>
-    )
+    );
   }
 }
 
-export default One;
+export default StringComp;

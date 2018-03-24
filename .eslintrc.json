@@ -39,5 +39,8 @@
       "always"
     ],
     "no-console": 0
+  },  
+  "globals": {
+    "google": false
   }
 }

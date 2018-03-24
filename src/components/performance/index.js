@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import * as performanceActions from './performance.actions';
 // import performanceReducer from './performance.Reducer';
 
-import One from './views/One';
+import StringComp from './views/StringComp';
 
 class Performance extends Component {
 
@@ -61,7 +61,7 @@ class Performance extends Component {
   render() {
     return (
       <div>
-        <One props={this.props}/>
+        <StringComp props={this.props}/>
       </div>
     );
   }
